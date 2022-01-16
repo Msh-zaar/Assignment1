@@ -11,6 +11,7 @@ namespace Assignment1
         public string Name { get; set; } = "Default Name";
         public int Level { get; set; } = 1;
         public abstract void LevelUp();
+        public abstract int[] GetAttributes();
     }
 
 }

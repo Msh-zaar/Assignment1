@@ -29,5 +29,9 @@ namespace Assignment1
                 $"Level {Level}\n" +
                 $"{attr}";
         }
+        public override int[] GetAttributes()
+        {
+            return attr.GetAttributes();
+        }
     }
 }
