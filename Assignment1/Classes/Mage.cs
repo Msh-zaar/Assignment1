@@ -33,5 +33,15 @@ namespace Assignment1
         {
             return attr.GetAttributes();
         }
+
+        public override void DealDamage()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void EquipItem()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

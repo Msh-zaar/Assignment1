@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assignment1.Item;
+using System;
 
 namespace Assignment1
 {
@@ -33,6 +34,17 @@ namespace Assignment1
             };
             warrior.LevelUp();
             Console.WriteLine(warrior);
+
+            Weapon testAxe = new Weapon()
+            {
+                ItemName = "Common Axe",
+                ReqLevel = 1,
+                ItemSlot = "Weapon",
+                WepTyp = Weapon.WeaponType.Axe,
+                BaseDamage = 7,
+                AttackSpeed = 1.1
+            };
+            Console.WriteLine(testAxe);
         }
     }
 }
