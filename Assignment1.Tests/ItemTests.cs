@@ -1,4 +1,5 @@
-﻿using Assignment1.Item;
+﻿using Assignment1.Attributes;
+using Assignment1.Item;
 using System;
 using Xunit;
 
@@ -26,7 +27,7 @@ namespace Assignment1.Tests
                 AttackSpeed = 1.1
             };
             // Act
-            
+            testWarrior.EquipItem(testAxe);
             // Assert
             
         }
@@ -34,10 +35,17 @@ namespace Assignment1.Tests
         /// 
         /// </summary>
         [Fact]
-        public void Check()
+        public void Check_WarriorCanEquipPlateArmourOfCorrectItemLevel_ShouldEquip()
         {
             // Arrange
-
+            Armour testPlateBody = new Armour()
+            {
+                ItemName = "Common Plate Body Armour",
+                ReqLevel = 1,
+                ItemSlot = "Body",
+                ArmTyp = Armour.ArmourType.Plate,
+                Attributes = new PrimaryAttributes(1, 0, 0)
+            };
             // Act
 
             // Assert

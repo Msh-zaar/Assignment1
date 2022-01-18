@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assignment1.Item;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,19 +11,26 @@ namespace Assignment1
     {
         public string Name { get; set; } = "Default Name";
         public int Level { get; set; } = 1;
-        enum Slot
-        {
-            Head,
-            Body,
-            Legs,
-            Weapon
-        }
 
         // Methods
+
+        /// <summary>
+        /// Levels up the character, adds 1 to Level
+        /// </summary>
         public abstract void LevelUp();
+        /// <summary>
+        /// Returns a formatted string with relevant attributes
+        /// </summary>
+        /// <returns>array of attributes</returns>
         public abstract int[] GetAttributes();
-        public abstract void DealDamage();
-        public abstract void EquipItem();
+        /// <summary>
+        /// Deals damage
+        /// </summary>
+        public abstract double DealDamage();
+        /// <summary>
+        /// Equips an item on character
+        /// </summary>
+        public abstract void EquipItem(Items item);
     }
 
 }

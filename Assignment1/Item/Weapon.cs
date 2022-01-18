@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assignment1.Item
 {
-    public class Weapon : Item
+    public class Weapon : Items
     {
         public enum WeaponType
         {
@@ -21,12 +21,11 @@ namespace Assignment1.Item
         
         public int BaseDamage { get; set; }
         public double AttackSpeed { get; set; }
-        public WeaponType WepTyp { get; set; } = WeaponType.Axe;
+        public WeaponType WepTyp { get; set; }
 
         public Weapon()
         {
         }
-
         public override string ToString()
         {
             return $"Item Name: {ItemName}\n" +
@@ -38,25 +37,13 @@ namespace Assignment1.Item
                 $"DPS: {GetDps()}\n";
         }
 
+        /// <summary>
+        /// Returns the dps of a weapon
+        /// </summary>
+        /// <returns>Base damage * attack speed</returns>
         public double GetDps()
         {
             return BaseDamage * AttackSpeed;
         }
-
-        public void EquipmentTest()
-        {
-            ;
-        }
-
-
-        //Weapon testAxe = new Weapon()
-        //{
-        //    ItemName = "Common Axe",
-        //    ItemLevel = 1,
-        //    ItemSlot = Slot.Weapon,
-        //    WeaponType = WeaponType.Axe,
-        //    BaseDamage = 7,
-        //    AttackSpeed = 1.1
-        //};
     }
 }

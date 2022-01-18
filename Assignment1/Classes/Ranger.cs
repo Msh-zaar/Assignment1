@@ -1,4 +1,5 @@
 ﻿using Assignment1.Attributes;
+using Assignment1.Item;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,12 +35,12 @@ namespace Assignment1
             return attr.GetAttributes();
         }
 
-        public override void DealDamage()
+        public override double DealDamage()
         {
             throw new NotImplementedException();
         }
 
-        public override void EquipItem()
+        public override void EquipItem(Items item)
         {
             throw new NotImplementedException();
         }

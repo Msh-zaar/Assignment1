@@ -7,44 +7,24 @@ namespace Assignment1
     {
         static void Main(string[] args)
         {
+            Weapon testAxe = new Weapon()
+            {
+                ItemName = "Common Axe",
+                ReqLevel = 2,
+                ItemSlot = "Weapon",
+                WepTyp = Weapon.WeaponType.Axe,
+                BaseDamage = 7,
+                AttackSpeed = 1.1
+            };
+
             Mage mage = new Mage()
             {
                 Name = "Mage Magerson"
             };
             mage.LevelUp();
             Console.WriteLine(mage);
-
-            Ranger ranger = new Ranger()
-            {
-                Name = "Ranger Rangerson"
-            };
-            ranger.LevelUp();
-            Console.WriteLine(ranger);
-
-            Rogue rogue = new Rogue()
-            {
-                Name = "Rogue Roguerson"
-            };
-            rogue.LevelUp();
-            Console.WriteLine(rogue);
-
-            Warrior warrior = new Warrior()
-            {
-                Name = "Warrior Warriorson"
-            };
-            warrior.LevelUp();
-            Console.WriteLine(warrior);
-
-            Weapon testAxe = new Weapon()
-            {
-                ItemName = "Common Axe",
-                ReqLevel = 1,
-                ItemSlot = "Weapon",
-                WepTyp = Weapon.WeaponType.Axe,
-                BaseDamage = 7,
-                AttackSpeed = 1.1
-            };
-            Console.WriteLine(testAxe);
+            mage.EquipItem(testAxe);
+            Console.WriteLine(mage);
         }
     }
 }
