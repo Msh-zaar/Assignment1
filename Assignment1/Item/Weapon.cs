@@ -35,9 +35,6 @@ namespace Assignment1.Item
                 $"Attack Speed: {AttackSpeed}\n" +
                 $"DPS: {GetDps()}\n";
         }
-
-
-
         /// <summary>
         /// Returns the dps of a weapon
         /// </summary>

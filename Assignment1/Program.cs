@@ -8,36 +8,65 @@ namespace Assignment1
     {
         static void Main(string[] args)
         {
-            Mage mage = new Mage()
+            Mage mage = new Mage();
+            Ranger ranger = new Ranger();
+            Rogue rogue = new Rogue();
+            Warrior warrior = new Warrior();
+
+            Weapon testAxe = new Weapon()
             {
-                Name = "Mage Magerson"
+                ItemName = "Common Axe",
+                ReqLevel = 1,
+                WepTyp = Weapon.WeaponType.Axe,
+                BaseDamage = 7,
+                AttackSpeed = 1.1
+            };
+            Weapon testBow = new Weapon()
+            {
+                ItemName = "Common Bow",
+                ReqLevel = 1,
+                WepTyp = Weapon.WeaponType.Bow,
+                BaseDamage = 7,
+                AttackSpeed = 1.1
+            };
+            Weapon testDagger = new Weapon()
+            {
+                ItemName = "Common Dagger",
+                ReqLevel = 1,
+                WepTyp = Weapon.WeaponType.Dagger,
+                BaseDamage = 7,
+                AttackSpeed = 1.1
+            };
+            Weapon testStaff = new Weapon()
+            {
+                ItemName = "Common Staff",
+                ReqLevel = 1,
+                WepTyp = Weapon.WeaponType.Staff,
+                BaseDamage = 7,
+                AttackSpeed = 1.1
             };
             Weapon testWand = new Weapon()
             {
                 ItemName = "Common Wand",
-                ReqLevel = 2,
+                ReqLevel = 1,
                 WepTyp = Weapon.WeaponType.Wand,
-                BaseDamage = 5,
-                AttackSpeed = 5
+                BaseDamage = 7,
+                AttackSpeed = 1.1
             };
-            Armour testCloth = new Armour()
+            Armour testPlateBody = new Armour()
             {
-                ItemName = "Rare Cloth Body Armour",
-                ReqLevel = 2,
+                ItemName = "Common Plate Body Armour",
+                ReqLevel = 1,
                 ItemSlot = "Body",
-                ArmTyp = Armour.ArmourType.Cloth,
-                Attributes = new PrimaryAttributes(1, 1, 1)
+                ArmTyp = Armour.ArmourType.Plate,
+                Attributes = new PrimaryAttributes(1, 0, 0)
             };
 
-            mage.LevelUp();
-            mage.EquipWeapon(testWand);
-            Console.WriteLine(mage);
-            Console.WriteLine(mage.DealDamage());
-
-
-            mage.EquipArmour(testCloth);
-            Console.WriteLine(mage);
-            Console.WriteLine(mage.DealDamage());
+            Console.WriteLine(warrior.DealDamage());
+            warrior.EquipWeapon(testAxe);
+            Console.WriteLine(warrior.DealDamage());
+            warrior.EquipArmour(testPlateBody);
+            Console.WriteLine(warrior);
         }
     }
 }

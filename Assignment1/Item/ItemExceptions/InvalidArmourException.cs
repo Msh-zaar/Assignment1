@@ -10,5 +10,6 @@ namespace Assignment1.Item.ItemExceptions
     {
         public InvalidArmourException() : base() { }
         public InvalidArmourException(string message) : base(message) { }
+        public InvalidArmourException(string message, Exception inner) : base(message, inner) { }
     }
 }

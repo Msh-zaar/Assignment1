@@ -28,10 +28,13 @@ namespace Assignment1
         /// </summary>
         public abstract double DealDamage();
         /// <summary>
-        /// Equips an item on character
+        /// Equips a weapon to character
         /// </summary>
-        public abstract void EquipWeapon(Weapon weapon);
-        public abstract void EquipArmour(Armour armour);
+        public abstract string EquipWeapon(Weapon weapon);
+        /// <summary>
+        /// Equips armour on character
+        /// </summary>
+        public abstract string EquipArmour(Armour armour);
     }
 
 }
