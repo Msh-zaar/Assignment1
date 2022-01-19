@@ -86,7 +86,7 @@ namespace Assignment1
             {
                 if (weapon.GetType().Equals(typeof(Weapon)))
                 {
-                    if (weapon.ReqLevel <= this.Level && weapon.WepTyp == (Weapon.WeaponType.Dagger | Weapon.WeaponType.Sword))
+                    if (weapon.ReqLevel <= this.Level && weapon.WepTyp == (Weapon.WeaponType.Axe | Weapon.WeaponType.Hammer | Weapon.WeaponType.Sword))
                     {
                         armament.Remove(Hands.Weapon);
                         armament.Add(Hands.Weapon, weapon);
@@ -103,7 +103,7 @@ namespace Assignment1
         {
             try
             {
-                if (armour.ReqLevel <= this.Level && armour.ArmTyp == (Armour.ArmourType.Leather | Armour.ArmourType.Mail))
+                if (armour.ReqLevel <= this.Level && armour.ArmTyp == (Armour.ArmourType.Mail | Armour.ArmourType.Plate))
                 {
                     switch (armour.ItemSlot)
                     {
