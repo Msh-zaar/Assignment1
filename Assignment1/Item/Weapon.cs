@@ -30,12 +30,13 @@ namespace Assignment1.Item
         {
             return $"Item Name: {ItemName}\n" +
                 $"Weapon Type: {WepTyp}\n" +
-                $"Fits in the {ItemSlot} slot\n" +
                 $"Required Level: {ReqLevel}\n" +
                 $"Base Damage: {BaseDamage}\n" +
                 $"Attack Speed: {AttackSpeed}\n" +
                 $"DPS: {GetDps()}\n";
         }
+
+
 
         /// <summary>
         /// Returns the dps of a weapon

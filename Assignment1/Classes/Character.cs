@@ -30,7 +30,8 @@ namespace Assignment1
         /// <summary>
         /// Equips an item on character
         /// </summary>
-        public abstract void EquipItem(Items item);
+        public abstract void EquipWeapon(Weapon weapon);
+        public abstract void EquipArmour(Armour armour);
     }
 
 }

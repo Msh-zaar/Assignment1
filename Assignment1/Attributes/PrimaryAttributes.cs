@@ -33,6 +33,14 @@ namespace Assignment1.Attributes
             dexterity += leveling[1];
             intelligence += leveling[2];
         }
+        public static PrimaryAttributes operator +(PrimaryAttributes lhs, PrimaryAttributes rhs)
+        {
+            return new PrimaryAttributes(lhs.strength + rhs.strength, lhs.dexterity + rhs.dexterity, lhs.intelligence + rhs.intelligence);
+        }
+        public static PrimaryAttributes operator -(PrimaryAttributes lhs, PrimaryAttributes rhs)
+        {
+            return new PrimaryAttributes(lhs.strength - rhs.strength, lhs.dexterity - rhs.dexterity, lhs.intelligence - rhs.intelligence);
+        }
         /// <summary>
         /// Retrieves current values of str, dex, int
         /// </summary>

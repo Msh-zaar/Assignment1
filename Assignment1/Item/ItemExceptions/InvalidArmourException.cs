@@ -8,8 +8,7 @@ namespace Assignment1.Item.ItemExceptions
 {
     public class InvalidArmourException : Exception
     {
-        public InvalidArmourException()
-        {
-        }
+        public InvalidArmourException() : base() { }
+        public InvalidArmourException(string message) : base(message) { }
     }
 }

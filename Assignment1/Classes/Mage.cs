@@ -10,17 +10,31 @@ namespace Assignment1
     {
         static int[] mageBaseAttr = new int[] { 1, 1, 8 }; // Starting Attributes of a Mage
         static int[] mageLevelAttr = new int[] { 1, 1, 5 }; // Attributes gained on level up for Mage
-        enum Slot
+        public enum Slot
         {
             Head,
             Body,
-            Legs,
+            Legs
+        }
+        enum Hands
+        {
             Weapon
         }
+        //public enum AllowedWeapons
+        //{
+        //    Staff,
+        //    Wand
+        //}
+        //public enum AllowedArmour
+        //{
+        //    Cloth
+        //}
 
-        Dictionary<Slot, Items> equipment = new Dictionary<Slot, Items>();
+        Dictionary<Slot, Armour> equipment = new Dictionary<Slot, Armour>();
+        Dictionary<Hands, Weapon> armament = new Dictionary<Hands, Weapon>();
 
-        PrimaryAttributes attr = new PrimaryAttributes(mageBaseAttr);
+        PrimaryAttributes attributes = new PrimaryAttributes(mageBaseAttr);
+        PrimaryAttributes temporaryAttributes = new PrimaryAttributes(0, 0, 0);
 
         public Mage()
         {
@@ -29,60 +43,91 @@ namespace Assignment1
         public override void LevelUp()
         {
             this.Level += 1;
-            attr.Leveling(mageLevelAttr);
+            attributes.Leveling(mageLevelAttr);
+            //Console.WriteLine("Ding!");
         }
         public override string ToString()
         {
             return $"Name: {Name}\n" +
                 $"Level {Level}\n" +
-                $"{attr}\n" +
-                $"Weapon:\n{equipment[Slot.Weapon]}\n" +
-                $"Head:\n{equipment[Slot.Head]}\n" +
-                $"Body:\n{equipment[Slot.Body]}\n" +
-                $"Legs:\n{equipment[Slot.Legs]}";
+                $"{attributes + temporaryAttributes}\n" +
+                $"Weapon:\n{(armament.ContainsKey(Hands.Weapon) ? armament[Hands.Weapon] : "Hands")}\n" + // tertiary operator: if not empty, print the slot, else print the string
+                $"Head:\n{(equipment.ContainsKey(Slot.Head) ? equipment[Slot.Head] : "Bare\n")}\n" +
+                $"Body:\n{(equipment.ContainsKey(Slot.Body) ? equipment[Slot.Body] : "Naked\n")}\n" +
+                $"Legs:\n{(equipment.ContainsKey(Slot.Legs) ? equipment[Slot.Legs] : "Naked\n")}\n";
         }
         public override int[] GetAttributes()
         {
-            return attr.GetAttributes();
+            return attributes.GetAttributes();
         }
 
         public override double DealDamage()
         {
-            int primaryAttribute = attr.GetAttributes()[2];
-            double tempWeapon = 1.5;
-            return (tempWeapon * (1 + primaryAttribute/100));
+            double attrScore = attributes.intelligence + temporaryAttributes.intelligence; // sums up primary attributes and those gained from armour
 
+            double currentWeaponDPS = 1;
+            if (armament.ContainsKey(Hands.Weapon))
+            {
+                currentWeaponDPS = armament[Hands.Weapon].GetDps();
+            }
+
+            double attrModifier = 1 + attrScore/100;
+            return currentWeaponDPS * attrModifier;
         }
 
-        public override void EquipItem(Items item)
+        public override void EquipWeapon(Weapon weapon)
         {
-            if (item.ItemSlot == "Weapon")
+            try
             {
-                if (item.ReqLevel > this.Level)
+                if (weapon.GetType().Equals(typeof(Weapon)))
                 {
-                    throw new InvalidWeaponException();
+                    if (weapon.ReqLevel <= this.Level && weapon.WepTyp == (Weapon.WeaponType.Staff | Weapon.WeaponType.Wand))
+                    {
+                        armament.Remove(Hands.Weapon);
+                        armament.Add(Hands.Weapon, weapon);
+                    }
                 }
             }
-            switch (item.ItemSlot)
+            catch (InvalidWeaponException)
             {
-                case "Head":
-                    equipment.Remove(Slot.Head);
-                    equipment.Add(Slot.Head, item);
-                    break;
-                case "Body":
-                    equipment.Remove(Slot.Body);
-                    equipment.Add(Slot.Body, item);
-                    break;
-                case "Legs":
-                    equipment.Remove(Slot.Legs);
-                    equipment.Add(Slot.Legs, item);
-                    break;
-                case "Weapon":
-                    equipment.Remove(Slot.Weapon);
-                    equipment.Add(Slot.Weapon, item);
-                    break;
-                default:
-                    break;
+                throw new InvalidWeaponException("You can not wield this weapon");
+            }
+        }
+
+        public override void EquipArmour(Armour armour)
+        {
+            try
+            {
+                if (armour.ReqLevel <= this.Level && armour.ArmTyp == (Armour.ArmourType.Cloth))
+                {
+                    switch (armour.ItemSlot)
+                    {
+                        case "Head":
+                            if (equipment.ContainsKey(Slot.Head)) { temporaryAttributes -= equipment[Slot.Head].Attributes; }
+                            equipment.Remove(Slot.Head);
+                            equipment.Add(Slot.Head, armour);
+                            temporaryAttributes += armour.Attributes;
+                            break;
+                        case "Body":
+                            if (equipment.ContainsKey(Slot.Body)) { temporaryAttributes -= equipment[Slot.Body].Attributes; }
+                            equipment.Remove(Slot.Body);
+                            equipment.Add(Slot.Body, armour);
+                            temporaryAttributes += armour.Attributes;
+                            break;
+                        case "Legs":
+                            if (equipment.ContainsKey(Slot.Legs)) { temporaryAttributes -= equipment[Slot.Legs].Attributes; }
+                            equipment.Remove(Slot.Legs);
+                            equipment.Add(Slot.Legs, armour);
+                            temporaryAttributes += armour.Attributes;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+            catch (InvalidArmourException)
+            {
+                throw new InvalidArmourException("You can not don this armour");
             }
         }
     }

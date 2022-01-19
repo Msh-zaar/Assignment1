@@ -27,7 +27,7 @@ namespace Assignment1.Tests
                 AttackSpeed = 1.1
             };
             // Act
-            testWarrior.EquipItem(testAxe);
+            testWarrior.EquipWeapon(testAxe);
             // Assert
             
         }

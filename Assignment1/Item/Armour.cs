@@ -26,9 +26,9 @@ namespace Assignment1.Item
         {
             return $"Item Name: {ItemName}\n" +
                 $"Armour Type: {ArmTyp}\n" +
-                $"Fits in the {ItemSlot} slot\n" +
+                $"This is {ItemSlot} armour\n" +
                 $"Required Level: {ReqLevel}\n" +
-                $"Gives {1} {2}";
+                $"Grants:\n{Attributes}";
         }
     }
 }

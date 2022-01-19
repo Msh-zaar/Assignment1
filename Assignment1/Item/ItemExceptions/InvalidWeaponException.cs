@@ -8,8 +8,8 @@ namespace Assignment1.Item.ItemExceptions
 {
     public class InvalidWeaponException : Exception
     {
-        public InvalidWeaponException()
-        {
-        }
+        public InvalidWeaponException() : base() { }
+        public InvalidWeaponException(string message) : base(message) { }
+
     }
 }
