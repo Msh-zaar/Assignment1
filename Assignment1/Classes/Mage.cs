@@ -20,15 +20,6 @@ namespace Assignment1
         {
             Weapon
         }
-        //public enum AllowedWeapons
-        //{
-        //    Staff,
-        //    Wand
-        //}
-        //public enum AllowedArmour
-        //{
-        //    Cloth
-        //}
 
         Dictionary<Slot, Armour> equipment = new Dictionary<Slot, Armour>();
         Dictionary<Hands, Weapon> armament = new Dictionary<Hands, Weapon>();
@@ -51,6 +42,7 @@ namespace Assignment1
             return $"Name: {Name}\n" +
                 $"Level {Level}\n" +
                 $"{attributes + temporaryAttributes}\n" +
+                $"{DealDamage()}" +
                 $"Weapon:\n{(armament.ContainsKey(Hands.Weapon) ? armament[Hands.Weapon] : "Hands\n")}\n" + // tertiary operator: if not empty, print the slot, else print the string
                 $"Head:\n{(equipment.ContainsKey(Slot.Head) ? equipment[Slot.Head] : "Bare\n")}\n" +
                 $"Body:\n{(equipment.ContainsKey(Slot.Body) ? equipment[Slot.Body] : "Naked\n")}\n" +

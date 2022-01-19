@@ -9,9 +9,10 @@ namespace Assignment1.Tests
     public class ItemTests
     {
         // --- BASE FUNCTIONALITY TESTS ---
+        //Method/Behaviour_Params_Expected
 
         [Fact]
-        public void Check_WarriorCanWieldAxeOfTooHighItemLevel_ShouldThrowInvalidWeaponException()
+        public void EquipWeapon_AxeIsTooHighLevel_ShouldThrowInvalidWeaponException()
         {
             // Arrange
             Warrior testWarrior = new Warrior();
@@ -30,7 +31,7 @@ namespace Assignment1.Tests
 
         }
         [Fact]
-        public void Check_WarriorCanEquipPlateArmourOfTooHighLevel_ShouldThrowInvalidArmourException()
+        public void EquipArmour_ArmourIsTooHighLevel_ShouldThrowInvalidArmourException()
         {
             // Arrange
             Warrior testWarrior = new Warrior();
@@ -48,7 +49,7 @@ namespace Assignment1.Tests
             Assert.Throws<InvalidArmourException>(act);
         }
         [Fact]
-        public void Check_WarriorCanWieldWrongWeaponType_ShouldThrowInvalidWeaponException()
+        public void EquipWeapon_WeaponIsWrongType_ShouldThrowInvalidWeaponException()
         {
             // Arrange
             Warrior testWarrior = new Warrior();
@@ -66,7 +67,7 @@ namespace Assignment1.Tests
             Assert.Throws<InvalidWeaponException>(act);
         }
         [Fact]
-        public void Check_WarriorCanEquipWrongArmourType_ShouldThrowInvalidArmourException()
+        public void EquipArmour_ArmourIsWrongType_ShouldThrowInvalidArmourException()
         {
             // Arrange
             Warrior testWarrior = new Warrior();
@@ -84,7 +85,7 @@ namespace Assignment1.Tests
             Assert.Throws<InvalidArmourException>(act);
         }
         [Fact]
-        public void CheckToSeeIfMessageIsReturnedOnSuccesfulEquipWeapon_ShouldReturnString()
+        public void EquipWeapon_UponSuccesfullEquip_ShouldReturnMessage()
         {
             // Arrange
             Warrior testWarrior = new Warrior();
@@ -102,7 +103,7 @@ namespace Assignment1.Tests
             Assert.Equal(testWarrior.EquipWeapon(testAxe), expectedMessage);
         }
         [Fact]
-        public void CheckToSeeIfMessageIsReturnedOnSuccesfulEquipArmour_ShouldReturnString()
+        public void EquipArmour_UponSuccesfullEquip_ShouldReturnMessage()
         {
             // Arrange
             Warrior testWarrior = new Warrior();
@@ -120,17 +121,17 @@ namespace Assignment1.Tests
             Assert.Equal(testWarrior.EquipArmour(testPlateBody), expectedMessage);
         }
         [Fact]
-        public void CheckWarriorDamageAtLevel1_ShouldReturn1point01()
+        public void DealDamage_WarriorDamageAtLevel1_ShouldReturn1point05()
         {
             // Arrange
             Warrior testWarrior = new Warrior();
             // Act
-            double expectedDamage = 1 * (1 + (5 / 100));
+            double expectedDamage = (1 * (1 + (5 / 100)));
             // Assert
-            Assert.Equal(testWarrior.DealDamage(), expectedDamage);
+            Assert.Equal(expectedDamage, testWarrior.DealDamage());
         }
         [Fact]
-        public void CheckWarriorDamageAtLevel1WithWeapon_ShouldReturnAround7point7()
+        public void DealDamage_WarriorDamageAtLevel1WithWeapon_ShouldReturnAround7point7()
         {
             // Arrange
             Warrior testWarrior = new Warrior();
@@ -144,12 +145,12 @@ namespace Assignment1.Tests
             };
             testWarrior.EquipWeapon(testAxe);
             // Act
-            double expectedDamageWithWeapon = (7 * 1.1) * (1 + (5 / 100));
+            double expectedDamageWithWeapon = ((7 * 1.1) * (1 + (5 / 100)));
             // Assert
-            Assert.Equal(testWarrior.DealDamage(), expectedDamageWithWeapon);
+            Assert.Equal(expectedDamageWithWeapon, testWarrior.DealDamage());
         }
         [Fact]
-        public void CheckWarriorDamageAtLevel1WithWeaponAndArmour_ShouldReturnAround7point7()
+        public void DealDamage_WarriorDamageAtLevel1WithWeaponAndArmour_ShouldReturnAround7point7()
         {
             // Arrange
             Warrior testWarrior = new Warrior();
@@ -173,9 +174,9 @@ namespace Assignment1.Tests
             };
             testWarrior.EquipArmour(testPlateBody);
             // Act
-            double expectedDamageWithWeaponAndArmour = (7 * 1.1) * (1 + ((5 + 1) / 100));
+            double expectedDamageWithWeaponAndArmour = ((7 * 1.1) * (1 + ((5 + 1) / 100)));
             // Assert
-            Assert.Equal(testWarrior.DealDamage(), expectedDamageWithWeaponAndArmour);
+            Assert.Equal(expectedDamageWithWeaponAndArmour, testWarrior.DealDamage());
         }
     }
 }

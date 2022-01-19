@@ -6,12 +6,13 @@ namespace Assignment1.Tests
     public class CharacterTests
     {
         // --- BASE FUNCTIONALITY TESTS ---
+        //Method/Behaviour_Params_Expected
 
         /// <summary>
         /// Checks to see if a newly created character (Mage) is level 1
         /// </summary>
         [Fact]
-        public void Check_CharacterLevelAtCreation_ShouldReturn1()
+        public void Construct_CharacterLevelAtCreation_ShouldReturn1()
         {
             // Arrange
             Mage testMage = new Mage();
@@ -24,7 +25,7 @@ namespace Assignment1.Tests
         /// Checks to see if a level 1 character (Mage) turns into level 2 after running the LevelUp-method
         /// </summary>
         [Fact]
-        public void Check_LevelAfterFirstLevelUp_ShouldReturn2()
+        public void LevelUp_LevelAfterOneGainedLevel_ShouldReturn2()
         {
             // Arrange
             Mage testMage = new Mage();
@@ -40,7 +41,7 @@ namespace Assignment1.Tests
         /// Checks to see that the base attributes of a level 1 mage alligns with the given values.
         /// </summary>
         [Fact]
-        public void Check_AttributesAtLevelOneForMage_ShouldReturn118()
+        public void GetAttributes_AttributesAtLevelOneForMage_ShouldReturn118()
         {
             // Arrange
             Mage testMage = new Mage();
@@ -54,7 +55,7 @@ namespace Assignment1.Tests
         /// Checks to see that the base attributes of a level 1 ranger alligns with the given values.
         /// </summary>
         [Fact]
-        public void Check_AttributesAtLevelOneForRanger_ShouldReturn171()
+        public void GetAttributes_AttributesAtLevelOneForRanger_ShouldReturn171()
         {
             // Arrange
             Ranger testRanger = new Ranger();
@@ -68,7 +69,7 @@ namespace Assignment1.Tests
         /// Checks to see that the base attributes of a level 1 rogue alligns with the given values.
         /// </summary>
         [Fact]
-        public void Check_AttributesAtLevelOneForRogue_ShouldReturn261()
+        public void GetAttributes_AttributesAtLevelOneForRogue_ShouldReturn261()
         {
             // Arrange
             Rogue testRogue = new Rogue();
@@ -82,7 +83,7 @@ namespace Assignment1.Tests
         /// Checks to see that the base attributes of a level 1 warrior alligns with the given values.
         /// </summary>
         [Fact]
-        public void Check_AttributesAtLevelOneForWarrior_ShouldReturn521()
+        public void GetAttributes_AttributesAtLevelOneForWarrior_ShouldReturn521()
         {
             // Arrange
             Warrior testWarrior = new Warrior();
@@ -98,7 +99,7 @@ namespace Assignment1.Tests
         /// Checks to see that the base attributes of a level 2 mage alligns with the given values.
         /// </summary>
         [Fact]
-        public void Check_AttributesAtLevelTwoForMage_ShouldReturn2213()
+        public void GetAttributes_AttributesAtLevelTwoForMage_ShouldReturn2213()
         {
             // Arrange
             Mage testMage = new Mage();
@@ -113,7 +114,7 @@ namespace Assignment1.Tests
         /// Checks to see that the base attributes of a level 2 ranger alligns with the given values.
         /// </summary>
         [Fact]
-        public void Check_AttributesAtLevelTwoForRanger_ShouldReturn2122()
+        public void GetAttributes_AttributesAtLevelTwoForRanger_ShouldReturn2122()
         {
             // Arrange
             Ranger testRanger = new Ranger();
@@ -128,7 +129,7 @@ namespace Assignment1.Tests
         /// Checks to see that the base attributes of a level 2 rogue alligns with the given values.
         /// </summary>
         [Fact]
-        public void Check_AttributesAtLevelTwoForRogue_ShouldReturn3102()
+        public void GetAttributes_AttributesAtLevelTwoForRogue_ShouldReturn3102()
         {
             // Arrange
             Rogue testRogue = new Rogue();
@@ -143,7 +144,7 @@ namespace Assignment1.Tests
         /// Checks to see that the base attributes of a level 2 warrior alligns with the given values.
         /// </summary>
         [Fact]
-        public void Check_AttributesAtLevelTwoForWarrior_ShouldReturn3102()
+        public void GetAttributes_AttributesAtLevelTwoForWarrior_ShouldReturn3102()
         {
             // Arrange
             Warrior testWarrior = new Warrior();

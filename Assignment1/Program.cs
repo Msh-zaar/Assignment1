@@ -66,7 +66,7 @@ namespace Assignment1
             warrior.EquipWeapon(testAxe);
             Console.WriteLine(warrior.DealDamage());
             warrior.EquipArmour(testPlateBody);
-            Console.WriteLine(warrior);
+            Console.WriteLine(warrior.DealDamage());
         }
     }
 }

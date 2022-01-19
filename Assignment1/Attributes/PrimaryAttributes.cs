@@ -39,7 +39,7 @@ namespace Assignment1.Attributes
         }
         public static PrimaryAttributes operator -(PrimaryAttributes lhs, PrimaryAttributes rhs)
         {
-            return new PrimaryAttributes(lhs.strength - rhs.strength, lhs.dexterity - rhs.dexterity, lhs.intelligence - rhs.intelligence);
+            return new PrimaryAttributes(lhs.strength - rhs.strength, lhs.dexterity - rhs.dexterity, lhs.intelligence + rhs.intelligence);
         }
         /// <summary>
         /// Retrieves current values of str, dex, int

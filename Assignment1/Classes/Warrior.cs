@@ -23,17 +23,6 @@ namespace Assignment1
         {
             Weapon
         }
-        //public enum AllowedWeapons
-        //{
-        //    Axe,
-        //    Hammer,
-        //    Sword
-        //}
-        //public enum AllowedArmour
-        //{
-        //    Mail,
-        //    Plate
-        //}
 
         Dictionary<Slot, Armour> equipment = new Dictionary<Slot, Armour>();
         Dictionary<Hands, Weapon> armament = new Dictionary<Hands, Weapon>();
@@ -56,6 +45,7 @@ namespace Assignment1
             return $"Name: {Name}\n" +
                 $"Level {Level}\n" +
                 $"{attributes + temporaryAttributes}\n" +
+                $"{DealDamage()}" +
                 $"Weapon:\n{(armament.ContainsKey(Hands.Weapon) ? armament[Hands.Weapon] : "Hands\n")}\n" + // tertiary operator: if not empty, print the slot, else print the string
                 $"Head:\n{(equipment.ContainsKey(Slot.Head) ? equipment[Slot.Head] : "Bare\n")}\n" +
                 $"Body:\n{(equipment.ContainsKey(Slot.Body) ? equipment[Slot.Body] : "Naked\n")}\n" +
@@ -68,7 +58,7 @@ namespace Assignment1
 
         public override double DealDamage()
         {
-            double attrScore = attributes.intelligence + temporaryAttributes.intelligence; // sums up primary attributes and those gained from armour
+            double attrScore = attributes.strength + temporaryAttributes.strength; // sums up primary attributes and those gained from armour
 
             double currentWeaponDPS = 1;
             if (armament.ContainsKey(Hands.Weapon))
@@ -76,7 +66,7 @@ namespace Assignment1
                 currentWeaponDPS = armament[Hands.Weapon].GetDps();
             }
 
-            double attrModifier = 1 + attrScore / 100;
+            double attrModifier = 1 + (attrScore / 100);
             return currentWeaponDPS * attrModifier;
         }
 
