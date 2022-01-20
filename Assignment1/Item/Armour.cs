@@ -16,16 +16,15 @@ namespace Assignment1.Item
             Mail,
             Plate
         }
-        public ArmourType ArmTyp { get; set; }
+        public ArmourType Type { get; set; }
         public PrimaryAttributes Attributes { get; set; }
         public Armour()
         {
         }
-
         public override string ToString()
         {
             return $"Item Name: {ItemName}\n" +
-                $"Armour Type: {ArmTyp}\n" +
+                $"Armour Type: {Type}\n" +
                 $"This is {ItemSlot} armour\n" +
                 $"Required Level: {ReqLevel}\n" +
                 $"Grants:\n{Attributes}";

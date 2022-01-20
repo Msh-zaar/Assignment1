@@ -21,7 +21,7 @@ namespace Assignment1.Item
         
         public int BaseDamage { get; set; }
         public double AttackSpeed { get; set; }
-        public WeaponType WepTyp { get; set; }
+        public WeaponType Type { get; set; }
 
         public Weapon()
         {
@@ -29,7 +29,7 @@ namespace Assignment1.Item
         public override string ToString()
         {
             return $"Item Name: {ItemName}\n" +
-                $"Weapon Type: {WepTyp}\n" +
+                $"Weapon Type: {Type}\n" +
                 $"Required Level: {ReqLevel}\n" +
                 $"Base Damage: {BaseDamage}\n" +
                 $"Attack Speed: {AttackSpeed}\n" +

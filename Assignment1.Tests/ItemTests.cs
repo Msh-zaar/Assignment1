@@ -20,7 +20,7 @@ namespace Assignment1.Tests
             {
                 ItemName = "Common Axe",
                 ReqLevel = 2,
-                WepTyp = Weapon.WeaponType.Axe,
+                Type = Weapon.WeaponType.Axe,
                 BaseDamage = 7,
                 AttackSpeed = 1.1
             };
@@ -40,7 +40,7 @@ namespace Assignment1.Tests
                 ItemName = "Common Plate Body Armour",
                 ReqLevel = 2,
                 ItemSlot = "Body",
-                ArmTyp = Armour.ArmourType.Plate,
+                Type = Armour.ArmourType.Plate,
                 Attributes = new PrimaryAttributes(1, 0, 0)
             };
             // Act
@@ -57,7 +57,7 @@ namespace Assignment1.Tests
             {
                 ItemName = "Common Bow",
                 ReqLevel = 1,
-                WepTyp = Weapon.WeaponType.Bow,
+                Type = Weapon.WeaponType.Bow,
                 BaseDamage = 12,
                 AttackSpeed = 0.8
             };
@@ -76,7 +76,7 @@ namespace Assignment1.Tests
                 ItemName = "Common Cloth Head Armour",
                 ReqLevel = 2,
                 ItemSlot = "Head",
-                ArmTyp = Armour.ArmourType.Cloth,
+                Type = Armour.ArmourType.Cloth,
                 Attributes = new PrimaryAttributes(0, 0, 5)
             };
             // Act
@@ -93,7 +93,7 @@ namespace Assignment1.Tests
             {
                 ItemName = "Common Axe",
                 ReqLevel = 1,
-                WepTyp = Weapon.WeaponType.Axe,
+                Type = Weapon.WeaponType.Axe,
                 BaseDamage = 7,
                 AttackSpeed = 1.1
             };
@@ -112,7 +112,7 @@ namespace Assignment1.Tests
                 ItemName = "Common Plate Body Armour",
                 ReqLevel = 1,
                 ItemSlot = "Body",
-                ArmTyp = Armour.ArmourType.Plate,
+                Type = Armour.ArmourType.Plate,
                 Attributes = new PrimaryAttributes(1, 0, 0)
             };
             // Act
@@ -142,7 +142,7 @@ namespace Assignment1.Tests
             {
                 ItemName = "Common Axe",
                 ReqLevel = 1,
-                WepTyp = Weapon.WeaponType.Axe,
+                Type = Weapon.WeaponType.Axe,
                 BaseDamage = 7,
                 AttackSpeed = 1.1
             };
@@ -162,7 +162,7 @@ namespace Assignment1.Tests
             {
                 ItemName = "Common Axe",
                 ReqLevel = 1,
-                WepTyp = Weapon.WeaponType.Axe,
+                Type = Weapon.WeaponType.Axe,
                 BaseDamage = 7,
                 AttackSpeed = 1.1
             };
@@ -173,7 +173,7 @@ namespace Assignment1.Tests
                 ItemName = "Common Plate Body Armour",
                 ReqLevel = 1,
                 ItemSlot = "Body",
-                ArmTyp = Armour.ArmourType.Plate,
+                Type = Armour.ArmourType.Plate,
                 Attributes = new PrimaryAttributes(1, 0, 0)
             };
             testWarrior.EquipArmour(testPlateBody);
