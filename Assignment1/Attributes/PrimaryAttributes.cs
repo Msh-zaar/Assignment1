@@ -66,7 +66,7 @@ namespace Assignment1.Attributes
         {
             return $"Strength: {strength}\n" +
             $"Dexterity: {dexterity}\n" +
-            $"Intelligence: {intelligence}\n";
+            $"Intelligence: {intelligence}";
         }
     }
 }

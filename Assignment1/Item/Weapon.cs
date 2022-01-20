@@ -8,7 +8,7 @@ namespace Assignment1.Item
 {
     public class Weapon : Items
     {
-        public enum WeaponType
+        public new enum ItemType
         {
             Axe,
             Bow,
@@ -18,17 +18,22 @@ namespace Assignment1.Item
             Sword,
             Wand
         }
-        
         public int BaseDamage { get; set; }
         public double AttackSpeed { get; set; }
-        public WeaponType Type { get; set; }
+        public new ItemType Type { get; set; }
 
-        public Weapon()
+        public Weapon(string name, int level, ItemType type, int baseDamage, double attackSpeed)
         {
+            ItemName = name;
+            ReqLevel = level;
+            Type = type;
+            BaseDamage = baseDamage;
+            AttackSpeed = attackSpeed;
         }
         public override string ToString()
         {
-            return $"Item Name: {ItemName}\n" +
+            return 
+                $"Item Name: {ItemName}\n" +
                 $"Weapon Type: {Type}\n" +
                 $"Required Level: {ReqLevel}\n" +
                 $"Base Damage: {BaseDamage}\n" +

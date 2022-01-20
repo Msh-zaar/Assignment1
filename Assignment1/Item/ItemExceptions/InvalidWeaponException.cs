@@ -11,6 +11,5 @@ namespace Assignment1.Item.ItemExceptions
         public InvalidWeaponException() : base() { }
         public InvalidWeaponException(string message) : base(message) { }
         public InvalidWeaponException(string message, Exception inner) : base(message, inner) { }
-
     }
 }

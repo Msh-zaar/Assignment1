@@ -17,15 +17,8 @@ namespace Assignment1.Tests
         public void EquipWeapon_IfAxeIsTooHighLevel_ShouldThrowInvalidWeaponException()
         {
             // Arrange
-            Warrior testWarrior = new Warrior();
-            Weapon testAxe = new Weapon()
-            {
-                ItemName = "Common Axe",
-                ReqLevel = 2,
-                Type = Weapon.WeaponType.Axe,
-                BaseDamage = 7,
-                AttackSpeed = 1.1
-            };
+            Warrior testWarrior = new();
+            Weapon testAxe = new("Common Axe", 2, Weapon.ItemType.Axe, 7, 1.1);
             // Act
             Action act = () => testWarrior.EquipWeapon(testAxe);
             // Assert
@@ -39,15 +32,8 @@ namespace Assignment1.Tests
         public void EquipArmour_IfArmourIsTooHighLevel_ShouldThrowInvalidArmourException()
         {
             // Arrange
-            Warrior testWarrior = new Warrior();
-            Armour testPlateBody = new Armour()
-            {
-                ItemName = "Common Plate Body Armour",
-                ReqLevel = 2,
-                ItemSlot = "Body",
-                Type = Armour.ArmourType.Plate,
-                Attributes = new PrimaryAttributes(1, 0, 0)
-            };
+            Warrior testWarrior = new();
+            Armour testPlateBody = new("Common Plate Body Armour", 2, Armour.Slot.Body, Armour.ItemType.Plate, new PrimaryAttributes(1, 0, 0));
             // Act
             Action act = () => testWarrior.EquipArmour(testPlateBody);
             // Assert
@@ -60,15 +46,8 @@ namespace Assignment1.Tests
         public void EquipWeapon_IfWeaponIsWrongType_ShouldThrowInvalidWeaponException()
         {
             // Arrange
-            Warrior testWarrior = new Warrior();
-            Weapon testBow = new Weapon()
-            {
-                ItemName = "Common Bow",
-                ReqLevel = 1,
-                Type = Weapon.WeaponType.Bow,
-                BaseDamage = 12,
-                AttackSpeed = 0.8
-            };
+            Warrior testWarrior = new();
+            Weapon testBow = new("Common Bow", 1, Weapon.ItemType.Bow, 12, 0.8);
             // Act
             Action act = () => testWarrior.EquipWeapon(testBow);
             // Assert
@@ -81,15 +60,8 @@ namespace Assignment1.Tests
         public void EquipArmour_IfArmourIsWrongType_ShouldThrowInvalidArmourException()
         {
             // Arrange
-            Warrior testWarrior = new Warrior();
-            Armour testClothHead = new Armour()
-            {
-                ItemName = "Common Cloth Head Armour",
-                ReqLevel = 2,
-                ItemSlot = "Head",
-                Type = Armour.ArmourType.Cloth,
-                Attributes = new PrimaryAttributes(0, 0, 5)
-            };
+            Warrior testWarrior = new();
+            Armour testClothHead = new("Common Cloth Head Armour", 1, Armour.Slot.Head, Armour.ItemType.Cloth, new PrimaryAttributes(0, 0, 5));
             // Act
             Action act = () => testWarrior.EquipArmour(testClothHead);
             // Assert
@@ -102,15 +74,8 @@ namespace Assignment1.Tests
         public void EquipWeapon_UponSuccesfullEquip_ShouldReturnMessage()
         {
             // Arrange
-            Warrior testWarrior = new Warrior();
-            Weapon testAxe = new Weapon()
-            {
-                ItemName = "Common Axe",
-                ReqLevel = 1,
-                Type = Weapon.WeaponType.Axe,
-                BaseDamage = 7,
-                AttackSpeed = 1.1
-            };
+            Warrior testWarrior = new();
+            Weapon testAxe = new("Common Axe", 1, Weapon.ItemType.Axe, 7, 1.1);
             // Act
             string expectedMessage = "New weapon equipped!";
             // Assert
@@ -124,14 +89,7 @@ namespace Assignment1.Tests
         {
             // Arrange
             Warrior testWarrior = new Warrior();
-            Armour testPlateBody = new Armour()
-            {
-                ItemName = "Common Plate Body Armour",
-                ReqLevel = 1,
-                ItemSlot = "Body",
-                Type = Armour.ArmourType.Plate,
-                Attributes = new PrimaryAttributes(1, 0, 0)
-            };
+            Armour testPlateBody = new("Common Plate Body Armour", 1, Armour.Slot.Body, Armour.ItemType.Plate, new PrimaryAttributes(1, 0, 0));
             // Act
             string expectedMessage = "New armour equipped!";
             // Assert
@@ -162,14 +120,7 @@ namespace Assignment1.Tests
         {
             // Arrange
             Warrior testWarrior = new Warrior();
-            Weapon testAxe = new Weapon()
-            {
-                ItemName = "Common Axe",
-                ReqLevel = 1,
-                Type = Weapon.WeaponType.Axe,
-                BaseDamage = 7,
-                AttackSpeed = 1.1
-            };
+            Weapon testAxe = new("Common Axe", 1, Weapon.ItemType.Axe, 7, 1.1);
             testWarrior.EquipWeapon(testAxe);
             // Act
             double expectedDamageWithWeapon = (7 * 1.1) * (1 + ((double)5 / 100)); //8.085
@@ -185,24 +136,10 @@ namespace Assignment1.Tests
         {
             // Arrange
             Warrior testWarrior = new Warrior();
-            Weapon testAxe = new Weapon()
-            {
-                ItemName = "Common Axe",
-                ReqLevel = 1,
-                Type = Weapon.WeaponType.Axe,
-                BaseDamage = 7,
-                AttackSpeed = 1.1
-            };
+            Weapon testAxe = new("Common Axe", 1, Weapon.ItemType.Axe, 7, 1.1);
             testWarrior.EquipWeapon(testAxe);
 
-            Armour testPlateBody = new Armour()
-            {
-                ItemName = "Common Plate Body Armour",
-                ReqLevel = 1,
-                ItemSlot = "Body",
-                Type = Armour.ArmourType.Plate,
-                Attributes = new PrimaryAttributes(1, 0, 0)
-            };
+            Armour testPlateBody = new("Common Plate Body Armour", 1, Armour.Slot.Body, Armour.ItemType.Plate, new PrimaryAttributes(1, 0, 0));
             testWarrior.EquipArmour(testPlateBody);
             // Act
             double expectedDamageWithWeaponAndArmour = (7 * 1.1) * (1 + ((double)(5 + 1) / 100)); //8.162

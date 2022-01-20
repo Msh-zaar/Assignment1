@@ -1,11 +1,7 @@
 ﻿using Assignment1.Attributes;
 using Assignment1.Item;
 using Assignment1.Item.ItemExceptions;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Assignment1
 {
@@ -115,21 +111,21 @@ namespace Assignment1
         {
             if (armour.ReqLevel <= Level && AllowedArmours.Contains(armour.Type.ToString()))
             {
-                switch (armour.ItemSlot)
+                switch (armour.EquipmentSlot)
                 {
-                    case "Head":
+                    case Armour.Slot.Head:
                         if (Equipment.ContainsKey(Slot.Head)) { TemporaryAttributes -= Equipment[Slot.Head].Attributes; }
                         Equipment.Remove(Slot.Head);
                         Equipment.Add(Slot.Head, armour);
                         TemporaryAttributes += armour.Attributes;
                         return "New armour equipped!";
-                    case "Body":
+                    case Armour.Slot.Body:
                         if (Equipment.ContainsKey(Slot.Body)) { TemporaryAttributes -= Equipment[Slot.Body].Attributes; }
                         Equipment.Remove(Slot.Body);
                         Equipment.Add(Slot.Body, armour);
                         TemporaryAttributes += armour.Attributes;
                         return "New armour equipped!";
-                    case "Legs":
+                    case Armour.Slot.Legs:
                         if (Equipment.ContainsKey(Slot.Legs)) { TemporaryAttributes -= Equipment[Slot.Legs].Attributes; }
                         Equipment.Remove(Slot.Legs);
                         Equipment.Add(Slot.Legs, armour);
@@ -146,14 +142,16 @@ namespace Assignment1
         }
         public override string ToString()
         {
-            return $"Name: {Name}\n" +
-            $"Level {Level}\n" +
-            $"{BaseAttributes + TemporaryAttributes}\n" +
-            $"{DealDamage()}\n" +
-            $"Weapon:\n{(Armament.ContainsKey(Hands.Weapon) ? Armament[Hands.Weapon] : "Hands\n")}\n" + // tertiary operator: if not empty, print the slot, else print the string
-            $"Head:\n{(Equipment.ContainsKey(Slot.Head) ? Equipment[Slot.Head] : "Bare\n")}\n" +
-            $"Body:\n{(Equipment.ContainsKey(Slot.Body) ? Equipment[Slot.Body] : "Naked\n")}\n" +
-            $"Legs:\n{(Equipment.ContainsKey(Slot.Legs) ? Equipment[Slot.Legs] : "Naked\n")}\n";
+            return 
+                $"Name: {Name}\n" +
+                $"Level {Level}\n" +
+                $"This Character is a: {GetType().Name}\n" +
+                $"{BaseAttributes + TemporaryAttributes}\n" +
+                $"\nThis character deals: {DealDamage()} damage\n" +
+                $"\nWeapon:\n{(Armament.ContainsKey(Hands.Weapon) ? Armament[Hands.Weapon] : "Fists\n")}\n" + // tertiary operator: if not empty, print the slot, else print the string
+                $"Head:\n{(Equipment.ContainsKey(Slot.Head) ? Equipment[Slot.Head] : "Bare\n")}\n" +
+                $"Body:\n{(Equipment.ContainsKey(Slot.Body) ? Equipment[Slot.Body] : "Bare\n")}\n" +
+                $"Legs:\n{(Equipment.ContainsKey(Slot.Legs) ? Equipment[Slot.Legs] : "Bare\n")}\n";
         }
     }
 

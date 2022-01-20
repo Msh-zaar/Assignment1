@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Assignment1.Tests
 {
-    public class CharacterTests
+    public class ClassesTests
     {
         // --- BASE FUNCTIONALITY TESTS ---
         //Method/Behaviour_Params_Expected
