@@ -67,6 +67,7 @@ namespace Assignment1
             Console.WriteLine(warrior.DealDamage());
             warrior.EquipArmour(testPlateBody);
             Console.WriteLine(warrior.DealDamage());
+            Console.WriteLine((7 * 1.1) * (1 + ((double)(5 + 1) / 100)));
         }
     }
 }

@@ -120,15 +120,18 @@ namespace Assignment1.Tests
             // Assert
             Assert.Equal(testWarrior.EquipArmour(testPlateBody), expectedMessage);
         }
+
+        // DealDamage() --- floating point maths did not work without casting the divident to a double 
         [Fact]
         public void DealDamage_WarriorDamageAtLevel1_ShouldReturn1point05()
         {
             // Arrange
             Warrior testWarrior = new Warrior();
             // Act
-            double expectedDamage = (1 * (1 + (5 / 100)));
+            double expectedDamage = 1 * (1 + ((double)5 / 100)); //1.05
+            double actualDamage = testWarrior.DealDamage();
             // Assert
-            Assert.Equal(expectedDamage, testWarrior.DealDamage());
+            Assert.Equal(expectedDamage, actualDamage);
         }
         [Fact]
         public void DealDamage_WarriorDamageAtLevel1WithWeapon_ShouldReturnAround7point7()
@@ -145,9 +148,10 @@ namespace Assignment1.Tests
             };
             testWarrior.EquipWeapon(testAxe);
             // Act
-            double expectedDamageWithWeapon = ((7 * 1.1) * (1 + (5 / 100)));
+            double expectedDamageWithWeapon = (7 * 1.1) * (1 + ((double)5 / 100)); //8.085
+            double actualDamage = testWarrior.DealDamage();
             // Assert
-            Assert.Equal(expectedDamageWithWeapon, testWarrior.DealDamage());
+            Assert.Equal(expectedDamageWithWeapon, actualDamage);
         }
         [Fact]
         public void DealDamage_WarriorDamageAtLevel1WithWeaponAndArmour_ShouldReturnAround7point7()
@@ -174,9 +178,10 @@ namespace Assignment1.Tests
             };
             testWarrior.EquipArmour(testPlateBody);
             // Act
-            double expectedDamageWithWeaponAndArmour = ((7 * 1.1) * (1 + ((5 + 1) / 100)));
+            double expectedDamageWithWeaponAndArmour = (7 * 1.1) * (1 + ((double)(5 + 1) / 100)); //8.162
+            double actualDamage = testWarrior.DealDamage();
             // Assert
-            Assert.Equal(expectedDamageWithWeaponAndArmour, testWarrior.DealDamage());
+            Assert.Equal(expectedDamageWithWeaponAndArmour, actualDamage);
         }
     }
 }

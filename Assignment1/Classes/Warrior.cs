@@ -67,7 +67,7 @@ namespace Assignment1
             }
 
             double attrModifier = 1 + (attrScore / 100);
-            return currentWeaponDPS * attrModifier;
+            return (currentWeaponDPS * attrModifier);
         }
 
         public override string EquipWeapon(Weapon weapon)
