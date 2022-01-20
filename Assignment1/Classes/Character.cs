@@ -16,15 +16,15 @@ namespace Assignment1
         /// <summary>
         /// Main attribute of a specific class, 0 = strength, 1 = dexterity, 2 = intelligence
         /// </summary>
-        public int MainAtrribute { get; set; }
+        protected int MainAtrribute { get; set; }
         /// <summary>
         /// The starting attributes of a specific class 
         /// </summary>
-        public int[] StartingAttributes { get; set; } = { 0, 0, 0 };
+        protected int[] StartingAttributes { get; set; } = { 0, 0, 0 };
         /// <summary>
         /// The attributes gained when a specific class levels up
         /// </summary>
-        public int[] LevelingAttributes { get; set; }
+        protected int[] LevelingAttributes { get; set; }
         /// <summary>
         /// Dictionary of equipped items
         /// </summary>

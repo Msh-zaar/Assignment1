@@ -38,7 +38,7 @@ namespace Assignment1.Tests
         // --- LEVEL ONE TESTS ---
 
         /// <summary>
-        /// Checks to see that the base attributes of a level 1 mage alligns with the given values.
+        /// Checks to see that the base attributes of a level 1 mage is 1 strength, 1 decterity and 8 intelligence.
         /// </summary>
         [Fact]
         public void GetAttributes_AttributesAtLevelOneForMage_ShouldReturn118()
@@ -52,7 +52,7 @@ namespace Assignment1.Tests
             Assert.Equal(expectedAttributes, actualAttributes);
         }
         /// <summary>
-        /// Checks to see that the base attributes of a level 1 ranger alligns with the given values.
+        /// Checks to see that the base attributes of a level 1 ranger is 1 strength, 7 decterity and 1 intelligence.
         /// </summary>
         [Fact]
         public void GetAttributes_AttributesAtLevelOneForRanger_ShouldReturn171()
@@ -66,7 +66,7 @@ namespace Assignment1.Tests
             Assert.Equal(expectedAttributes, actualAttributes);
         }
         /// <summary>
-        /// Checks to see that the base attributes of a level 1 rogue alligns with the given values.
+        /// Checks to see that the base attributes of a level 1 rogue is 2 strength, 6 decterity and 1 intelligence.
         /// </summary>
         [Fact]
         public void GetAttributes_AttributesAtLevelOneForRogue_ShouldReturn261()
@@ -80,7 +80,7 @@ namespace Assignment1.Tests
             Assert.Equal(expectedAttributes, actualAttributes);
         }
         /// <summary>
-        /// Checks to see that the base attributes of a level 1 warrior alligns with the given values.
+        /// Checks to see that the base attributes of a level 1 warrior is 5 strength, 2 decterity and 1 intelligence.
         /// </summary>
         [Fact]
         public void GetAttributes_AttributesAtLevelOneForWarrior_ShouldReturn521()
@@ -96,7 +96,7 @@ namespace Assignment1.Tests
         // --- LEVEL 2 TESTS ---
 
         /// <summary>
-        /// Checks to see that the base attributes of a level 2 mage alligns with the given values.
+        /// Checks to see that the base attributes of a level 2 mage is 2 strength, 2 decterity and 13 intelligence.
         /// </summary>
         [Fact]
         public void GetAttributes_AttributesAtLevelTwoForMage_ShouldReturn2213()
@@ -111,7 +111,7 @@ namespace Assignment1.Tests
             Assert.Equal(expectedAttributes, actualAttributes);
         }
         /// <summary>
-        /// Checks to see that the base attributes of a level 2 ranger alligns with the given values.
+        /// Checks to see that the base attributes of a level 2 ranger is 2 strength, 12 decterity and 2 intelligence.
         /// </summary>
         [Fact]
         public void GetAttributes_AttributesAtLevelTwoForRanger_ShouldReturn2122()
@@ -126,7 +126,7 @@ namespace Assignment1.Tests
             Assert.Equal(expectedAttributes, actualAttributes);
         }
         /// <summary>
-        /// Checks to see that the base attributes of a level 2 rogue alligns with the given values.
+        /// Checks to see that the base attributes of a level 2 rogue is 3 strength, 10 decterity and 2 intelligence.
         /// </summary>
         [Fact]
         public void GetAttributes_AttributesAtLevelTwoForRogue_ShouldReturn3102()
@@ -141,7 +141,7 @@ namespace Assignment1.Tests
             Assert.Equal(expectedAttributes, actualAttributes);
         }
         /// <summary>
-        /// Checks to see that the base attributes of a level 2 warrior alligns with the given values.
+        /// Checks to see that the base attributes of a level 2 warrior is 8 strength, 4 decterity and 2 intelligence.
         /// </summary>
         [Fact]
         public void GetAttributes_AttributesAtLevelTwoForWarrior_ShouldReturn3102()
