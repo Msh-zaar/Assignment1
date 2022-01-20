@@ -1,4 +1,6 @@
 ﻿using Assignment1.Attributes;
+using Assignment1.Item;
+using Assignment1.Item.ItemExceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,39 +11,14 @@ namespace Assignment1
 {
     public class Ranger: Character
     {
-        static int[] rangerBaseAttr = new int[] { 1, 7, 1 }; // Starting Attributes of a Ranger
-        static int[] rangerLevelAttr = new int[] { 1, 5, 1 }; // Attributes gained on level up for Ranger
-
-        PrimaryAttributes attr = new PrimaryAttributes(rangerBaseAttr);
-
         public Ranger()
         {
-        }
-
-        public override void LevelUp()
-        {
-            this.Level += 1;
-            attr.Leveling(rangerLevelAttr);
-        }
-        public override string ToString()
-        {
-            return $"Name: {Name}\n" +
-                $"Level {Level}\n" +
-                $"{attr}";
-        }
-        public override int[] GetAttributes()
-        {
-            return attr.GetAttributes();
-        }
-
-        public override void DealDamage()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void EquipItem()
-        {
-            throw new NotImplementedException();
+            StartingAttributes = new int[] { 1, 7, 1 }; // Starting Attributes of a Ranger
+            LevelingAttributes = new int[] { 1, 5, 1 }; // Attributes gained on level up for Ranger
+            BaseAttributes += new PrimaryAttributes(StartingAttributes);
+            AllowedArmours = new List<string> { "Leather", "Mail" };
+            AllowedWeapons = new List<string> { "Bow" };
+            MainAtrribute = 1;
         }
     }
 }

@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Assignment1.Attributes.PrimaryAttributes">
+    <Position X="1.75" Y="0.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIgAAAAAAgAAEQAEAAAAAADAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Attributes\PrimaryAttributes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assignment1.Character">
+    <Position X="4.5" Y="0.75" Width="1.75" />
+    <NestedTypes>
+      <Enum Name="Assignment1.Character.Slot" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Classes\Character.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Assignment1.Character.Hands" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Classes\Character.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAoEAAAAEAAAAJAQJABQAAAABgAAAAABAACA=</HashCode>
+      <FileName>Classes\Character.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assignment1.Mage">
+    <Position X="6.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Mage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assignment1.Ranger">
+    <Position X="6.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Ranger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assignment1.Rogue">
+    <Position X="6.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Rogue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assignment1.Warrior">
+    <Position X="6.5" Y="5.25" Width="1.5" />
+    <InheritanceLine Type="Assignment1.Character" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.375" Y="5.449" />
+        <Point X="5.375" Y="5.625" />
+        <Point X="6.5" Y="5.625" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Warrior.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assignment1.Item.ItemExceptions.InvalidArmourException">
+    <Position X="11.75" Y="0.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Item\ItemExceptions\InvalidArmourException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assignment1.Item.ItemExceptions.InvalidWeaponException">
+    <Position X="11.75" Y="3.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Item\ItemExceptions\InvalidWeaponException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assignment1.Item.Armour">
+    <Position X="10" Y="0.75" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Assignment1.Item.Armour.ItemType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Item\Armour.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Assignment1.Item.Armour.Slot" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Item\Armour.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAQAAAAAAAAAQIAAAAAAAA=</HashCode>
+      <FileName>Item\Armour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assignment1.Item.Items">
+    <Position X="8.25" Y="0.75" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Assignment1.Item.Items.ItemType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Item\Items.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Assignment1.Item.Items.Slot" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Item\Items.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAIAAAAAAAAAAAAAAAAAAAAAAAAQIAAAAAAAA=</HashCode>
+      <FileName>Item\Items.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assignment1.Item.Weapon">
+    <Position X="10" Y="3.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Assignment1.Item.Weapon.ItemType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Item\Weapon.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAIAAQBAAAAAAAA=</HashCode>
+      <FileName>Item\Weapon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

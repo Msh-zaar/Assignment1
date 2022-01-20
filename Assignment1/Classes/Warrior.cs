@@ -1,4 +1,6 @@
 ﻿using Assignment1.Attributes;
+using Assignment1.Item;
+using Assignment1.Item.ItemExceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,39 +11,14 @@ namespace Assignment1
 {
     public class Warrior : Character
     {
-        static int[] warriorBaseAttr = new int[] { 5, 2, 1 }; // Starting Attributes of a Ranger
-        static int[] warriorLevelAttr = new int[] { 3, 2, 1 }; // Attributes gained on level up for Ranger
-
-        PrimaryAttributes attr = new PrimaryAttributes(warriorBaseAttr);
-
         public Warrior()
         {
-        }
-
-        public override void LevelUp()
-        {
-            this.Level += 1;
-            attr.Leveling(warriorLevelAttr);
-        }
-        public override string ToString()
-        {
-            return $"Name: {Name}\n" +
-                $"Level {Level}\n" +
-                $"{attr}";
-        }
-        public override int[] GetAttributes()
-        {
-            return attr.GetAttributes();
-        }
-
-        public override void DealDamage()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void EquipItem()
-        {
-            throw new NotImplementedException();
+            StartingAttributes = new int[] { 5, 2, 1 }; // Starting Attributes of a Warrior
+            LevelingAttributes = new int[] { 3, 2, 1 }; // Attributes gained on level up for Warrior
+            BaseAttributes += new PrimaryAttributes(StartingAttributes);
+            AllowedArmours = new List<string> { "Mail", "Plate" };
+            AllowedWeapons = new List<string> { "Axe", "Hammer", "Sword" };
+            MainAtrribute = 0;
         }
     }
 }
